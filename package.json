@@ -1,0 +1,12 @@
+{
+  "name": "ai-gateway",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @ai-gateway/api --filter @ai-gateway/web dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint"
+  }
+}
+
