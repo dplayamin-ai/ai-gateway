@@ -151,7 +151,7 @@ CREATE TABLE usage_logs (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   trace_id varchar(100) NOT NULL UNIQUE,
   api_key_id uuid REFERENCES api_keys(id),
-  tenant_id uuid NOT NULL REFERENCES tenants(id),
+  tenant_id uuid,
   information_system_id uuid REFERENCES information_systems(id),
   agent_id varchar(200),
   request_type varchar(20) NOT NULL CHECK (request_type IN ('MODEL', 'MCP')),
