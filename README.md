@@ -35,8 +35,8 @@ doc/                    # Use Case 원문
 ```bash
 docker compose -f infra/docker-compose.yml up -d
 pnpm install
-pnpm --filter @ai-gateway/api dev
-pnpm --filter @ai-gateway/web dev
+pnpm --filter @ai-gateway/api dev --host
+pnpm --filter @ai-gateway/web dev --host
 ```
 
 검증 명령:
