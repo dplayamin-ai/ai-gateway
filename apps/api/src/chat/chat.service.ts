@@ -69,7 +69,9 @@ export class ChatService {
     const provider = model.rows[0];
     if (!provider.endpoint) throw new HttpException('Provider endpoint가 설정되지 않았습니다.', 503);
     const endpoint = provider.endpoint.replace(/\/+$/, '');
-    const providerResponse = await fetch(`${endpoint}/chat/completions`, {
+    console.log(`${endpoint}/v1/chat/completions`);
+    console.log(JSON.stringify({ ...body, model: provider.provider_model }));
+    const providerResponse = await fetch(`${endpoint}/v1/chat/completions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${provider.api_key_ciphertext}` },
       body: JSON.stringify({ ...body, model: provider.provider_model }),
